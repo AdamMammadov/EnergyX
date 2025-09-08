@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EnerjiX — AI ilə Ağıllı Enerji Paylaşımı</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (ikonlar üçün) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yH0z1z1kYqKq1Q8h6hQGxqv0Xqv5G2Q8Cw5Y+9nl2v8g6u6Q1Z6p6n7o3f6Y0y3Y2d2a9Q0QKxF1eX8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="EnerjiX — AI ilə ağıllı enerji paylaşımı. İcmanı gücləndir, artıq enerjini paylaş.">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="#hero"><span class="logo-mark">⚡</span> <span class="logo-text">EnerjiX</span></a>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about">Haqqımızda</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#tech">Komanda / Tex</a></li>
+          <li><a href="#contact">Əlaqə</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menyu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Enerjini Paylaş, İcmanı Gücləndir.</h1>
+        <p class="lead">AI ilə ağıllı enerji paylaşımı. Artıq enerjini paylaş və ehtiyacı olanlara kömək et.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">İndi Başla</a>
+          <a class="btn outline" href="#demo">Demo Gör</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Sadə SVG + animasiya üçün qutu -->
+        <div class="solar-card">
+          <!-- günəş -->
+          <div class="sun"></div>
+
+          <!-- panel -->
+          <div class="panel">
+            <div class="panel-cell"></div>
+            <div class="panel-cell"></div>
+            <div class="panel-cell"></div>
+            <div class="panel-cell"></div>
+          </div>
+
+          <!-- enerji axını (dots animasiyası) -->
+          <div class="flow">
+            <span class="dot" style="--i:0;"></span>
+            <span class="dot" style="--i:1;"></span>
+            <span class="dot" style="--i:2;"></span>
+          </div>
+
+          <!-- small AI chip -->
+          <div class="ai-chip">
+            <i class="fa-solid fa-microchip"></i>
+            <span>AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -> SOLUTION -->
+  <section id="about" class="section section--alt">
+    <div class="container split">
+      <div class="col">
+        <h2>Problemlər</h2>
+        <div class="problems">
+          <div class="p-item">
+            <i class="fa-solid fa-bolt icon"></i>
+            <h3>Enerji israfı</h3>
+            <p>Əsasən enerji istehsalının qeyri-optimal paylanması nəticəsində israf yaranır.</p>
+          </div>
+          <div class="p-item">
+            <i class="fa-solid fa-share-nodes icon"></i>
+            <h3>Paylaşımın olmaması</h3>
+            <p>Artıq enerjinin paylaşılması üçün infrastruktur və alətlər çatışmır.</p>
+          </div>
+          <div class="p-item">
+            <i class="fa-solid fa-hands-holding icon"></i>
+            <h3>Ehtiyaclı insanlar</h3>
+            <p>Kiçik icmalar vaxtında əlavə enerji əldə etməkdə çətinlik çəkir.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h2>Həllimiz</h2>
+        <ul class="solutions">
+          <li><i class="fa-solid fa-robot icon-green"></i> AI paylaşımı təyin edir və optimallaşdırır.</li>
+          <li><i class="fa-solid fa-mobile-screen-button icon-green"></i> Mobil tətbiq vasitəsilə izləmə və balans.</li>
+          <li><i class="fa-solid fa-chart-line icon-green"></i> Real vaxt analitika və bildirişlər.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO VIZUAL -->
+  <section id="demo" class="section">
+    <div class="container">
+      <h2>Demo: Enerji ötürməsi</h2>
+
+      <div class="demo-grid">
+        <div class="diagram">
+          <div class="node node-a">A</div>
+          <div class="arrow">→</div>
+          <div class="node node-b">B</div>
+
+          <div class="diagram-flow">
+            <div class="flow-meter">
+              <div class="bar" style="--p:70%"></div>
+            </div>
+            <p class="muted">A-dan B-yə enerji ötürülür (AI optimallaşdırmışdır)</p>
+          </div>
+        </div>
+
+        <div class="balance-card">
+          <h3>Balanslar</h3>
+          <table class="balance-table">
+            <thead>
+              <tr><th>İstifadəçi</th><th>Artıq</th><th>Ehtiyac</th><th>Nəticə</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>+4 kWh</td><td>—</td><td>+2</td></tr>
+              <tr><td>B</td><td>—</td><td>-2 kWh</td><td>0</td></tr>
+            </tbody>
+          </table>
+          <p class="muted">Cədvəl sadə nümunə üçündür; real tətbiqdə dinamik olacaq.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY STACK -->
+  <section id="tech" class="section section--alt">
+    <div class="container">
+      <h2>Texnologiya Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>App</h4>
+          <p>Flutter</p>
+        </div>
+        <div class="tech-card">
+          <h4>Backend</h4>
+          <p>Python (FastAPI / Flask)</p>
+        </div>
+        <div class="tech-card">
+          <h4>Database</h4>
+          <p>Firebase</p>
+        </div>
+        <div class="tech-card">
+          <h4>AI</h4>
+          <p>Python modeli</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Əlaqə</h2>
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Ad</label>
+            <input id="name" name="name" type="text" placeholder="Adınız" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="email@ornek.com" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Mesaj</label>
+            <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazın..." required></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn primary">Göndər</button>
+            <div id="formMsg" class="form-msg" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <h3>Bizimlə əlaqə</h3>
+          <p>İstənilən sual üçün yazın — komandamız mümkün olan ən qısa zamanda cavab verəcək.</p>
+
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 EnerjiX – Bütün hüquqlar qorunur</div>
+      <div class="footer-links">
+        <a href="#about">Haqqımızda</a>
+        <a href="#demo">Demo</a>
+        <a href="#contact">Əlaqə</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
