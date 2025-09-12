@@ -68,3 +68,45 @@ const observer = new IntersectionObserver((entries)=>{
   });
 },{threshold:0.08});
 reveals.forEach(r => observer.observe(r));
+
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+  from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+import { getFirestore, collection, addDoc, getDocs, serverTimestamp } 
+  from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+// qeydiyyat
+async function registerUser(email, password) {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    console.log("User registered:", userCredential.user);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+// giriş
+async function loginUser(email, password) {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log("Logged in:", userCredential.user);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+// enerji paylaş
+async function shareEnergy(produced, consumed) {
+  try {
+    const shared = produced - consumed;
+    await addDoc(collection(db, "energy_shares"), {
+      produced,
+      consumed,
+      shared,
+      timestamp: serverTimestamp()
+    });
+    console.log("Energy shared:", shared);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
