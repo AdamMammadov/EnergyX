@@ -298,3 +298,120 @@ body{
   .tech-grid{grid-template-columns:1fr}
   .solar-card{height:260px}
 }
+
+/* === Auth & Energy Forms === */
+#auth form,
+#energy form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#auth input,
+#energy input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+#auth button,
+#energy button {
+  background: #00C853;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#auth button:hover,
+#energy button:hover {
+  background: #009e3d;
+}
+
+#history {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.history-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+/* 📱 Download App */
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn.secondary
+ {
+    background: #00C853;
+    color: #f1efea;
+    border: 1px solid #0289ff;
+ }
+
+ .btn.secondary:hover {
+    background: #00C853;
+    color: #fff;
+ }
+
+.profile-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.profile-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+button#logoutBtn {
+  padding: 10px 20px;
+  background: #00C853;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button#logoutBtn:hover {
+  background: #00C853;
+}
+
