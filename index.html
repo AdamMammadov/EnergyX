@@ -9,15 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome (ikonlar üçün) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yH0z1z1kYqKq1Q8h6hQGxqv0Xqv5G2Q8Cw5Y+9nl2v8g6u6Q1Z6p6n7o3f6Y0y3Y2d2a9Q0QKxF1eX8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <meta name="description" content="EnerjiX — AI ilə ağıllı enerji paylaşımı. İcmanı gücləndir, artıq enerjini paylaş.">
+  <!-- Firebase əsas konfiqurasiya -->
+  <script type="module" src="firebase.js"></script>
 </head>
-<body>
 
+<body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
@@ -31,6 +32,8 @@
           <li><a href="#demo">Demo</a></li>
           <li><a href="#tech">Komanda / Tex</a></li>
           <li><a href="#contact">Əlaqə</a></li>
+          <li><a href="profile.html" id="profileLink" style="display: none;">Profil</a></li>
+          <li><button id="logoutBtn" style="display: none;">Çıxış</button></li>
         </ul>
       </nav>
 
@@ -53,27 +56,19 @@
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <!-- Sadə SVG + animasiya üçün qutu -->
         <div class="solar-card">
-          <!-- günəş -->
           <div class="sun"></div>
-
-          <!-- panel -->
           <div class="panel">
             <div class="panel-cell"></div>
             <div class="panel-cell"></div>
             <div class="panel-cell"></div>
             <div class="panel-cell"></div>
           </div>
-
-          <!-- enerji axını (dots animasiyası) -->
           <div class="flow">
             <span class="dot" style="--i:0;"></span>
             <span class="dot" style="--i:1;"></span>
             <span class="dot" style="--i:2;"></span>
           </div>
-
-          <!-- small AI chip -->
           <div class="ai-chip">
             <i class="fa-solid fa-microchip"></i>
             <span>AI</span>
@@ -83,7 +78,7 @@
     </div>
   </section>
 
-  <!-- PROBLEM -> SOLUTION -->
+  <!-- PROBLEM & SOLUTION -->
   <section id="about" class="section section--alt">
     <div class="container split">
       <div class="col">
@@ -118,17 +113,15 @@
     </div>
   </section>
 
-  <!-- DEMO VIZUAL -->
+  <!-- DEMO -->
   <section id="demo" class="section">
     <div class="container">
       <h2>Demo: Enerji ötürməsi</h2>
-
       <div class="demo-grid">
         <div class="diagram">
           <div class="node node-a">A</div>
           <div class="arrow">→</div>
           <div class="node node-b">B</div>
-
           <div class="diagram-flow">
             <div class="flow-meter">
               <div class="bar" style="--p:70%"></div>
@@ -136,7 +129,6 @@
             <p class="muted">A-dan B-yə enerji ötürülür (AI optimallaşdırmışdır)</p>
           </div>
         </div>
-
         <div class="balance-card">
           <h3>Balanslar</h3>
           <table class="balance-table">
@@ -154,27 +146,58 @@
     </div>
   </section>
 
-  <!-- TECHNOLOGY STACK -->
+  <!-- 📱 Download App -->
+  <section id="download" class="download">
+    <div class="container">
+      <h2>Download App</h2>
+      <div class="download-buttons">
+        <a href="https://itunes.apple.com" target="_blank" class="btn secondary">App Store</a>
+        <a href="https://play.google.com" target="_blank" class="btn secondary">Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTH FORMS -->
+  <section id="auth" class="section section--alt">
+    <div class="container">
+      <h2>İstifadəçi Qeydiyyatı və Girişi</h2>
+
+      <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Şifrə" required>
+        <button type="submit">Qeydiyyat</button>
+      </form>
+
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Şifrə" required>
+        <button type="submit">Daxil ol</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ENERGY FORM -->
+  <section id="energy" class="section">
+    <div class="container">
+      <h2>Enerji əlavə et</h2>
+      <form id="energyForm">
+        <input type="number" id="produced" placeholder="İstehsal (kWh)" required>
+        <input type="number" id="consumed" placeholder="İstifadə (kWh)" required>
+        <button type="submit">Paylaş</button>
+      </form>
+      <div id="history"></div>
+    </div>
+  </section>
+
+  <!-- TECH -->
   <section id="tech" class="section section--alt">
     <div class="container">
       <h2>Texnologiya Stack</h2>
       <div class="tech-grid">
-        <div class="tech-card">
-          <h4>App</h4>
-          <p>Flutter</p>
-        </div>
-        <div class="tech-card">
-          <h4>Backend</h4>
-          <p>Python (FastAPI / Flask)</p>
-        </div>
-        <div class="tech-card">
-          <h4>Database</h4>
-          <p>Firebase</p>
-        </div>
-        <div class="tech-card">
-          <h4>AI</h4>
-          <p>Python modeli</p>
-        </div>
+        <div class="tech-card"><h4>App</h4><p>Flutter</p></div>
+        <div class="tech-card"><h4>Backend</h4><p>Python (FastAPI / Flask)</p></div>
+        <div class="tech-card"><h4>Database</h4><p>Firebase</p></div>
+        <div class="tech-card"><h4>AI</h4><p>Python modeli</p></div>
       </div>
     </div>
   </section>
@@ -202,15 +225,13 @@
             <div id="formMsg" class="form-msg" aria-live="polite"></div>
           </div>
         </form>
-
         <div class="contact-info">
           <h3>Bizimlə əlaqə</h3>
           <p>İstənilən sual üçün yazın — komandamız mümkün olan ən qısa zamanda cavab verəcək.</p>
-
           <div class="socials">
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -229,6 +250,10 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="firebase.js"></script>
+
 </body>
 </html>
