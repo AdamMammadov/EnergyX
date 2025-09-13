@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="az">
 <head>
   <meta charset="utf-8">
@@ -16,17 +16,49 @@
 
   <main class="profile-container">
     <h1>Profilim</h1>
-    <div class="profile-card">
-      <img id="profilePic" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile picture" class="profile-avatar">
 
-      <div class="profile-info">
-        <p><strong>Ad:</strong> <span id="profileName">—</span></p>
-        <p><strong>Email:</strong> <span id="profileEmail">—</span></p>
-        <p><strong>Ümumi paylaşdığın enerji:</strong> <span id="profileEnergy">0</span> kWh</p>
+    <div class="profile-card">
+      <!-- Profil şəkli -->
+      <div class="profile-pic">
+        <img id="profilePic" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile picture" class="profile-avatar">
+        <input type="file" id="uploadImage" accept="image/*">
       </div>
 
-      <button id="logoutBtn">Çıxış</button>
+      <!-- Ad və email -->
+      <div class="form-group">
+        <label for="displayName">Ad Soyad</label>
+        <input type="text" id="displayName" placeholder="Adınızı daxil edin">
+      </div>
+
+      <div class="form-group">
+        <label for="newEmail">Email</label>
+        <input type="email" id="newEmail" placeholder="Yeni email">
+        <button id="updateEmail">Email dəyiş</button>
+      </div>
+
+      <div class="form-group">
+        <label for="newPassword">Yeni Şifrə</label>
+        <input type="password" id="newPassword" placeholder="Yeni şifrə">
+        <button id="updatePassword">Şifrə dəyiş</button>
+      </div>
+
+      <!-- Enerji artır/azalt -->
+      <div class="form-group">
+        <label>Ümumi paylaşdığın enerji (kWh)</label>
+        <div class="energy-counter">
+          <button id="decreaseEnergy">-</button>
+          <span id="energyValue">0</span>
+          <button id="increaseEnergy">+</button>
+        </div>
+      </div>
+
+      <!-- Yadda saxla və çıxış -->
+      <div class="form-actions">
+        <button id="saveProfile">Yadda saxla</button>
+        <button id="logoutBtn" class="logout">Çıxış</button>
+      </div>
     </div>
   </main>
 </body>
 </html>
+
