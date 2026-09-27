@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebas
 
 // Firebase konfiqurasiya
 const firebaseConfig = {
-  apiKey: "AIzaSyAqF9YTxSkeNczZ28xON4CzgNQZSldTEB4",
   authDomain: "enerjix-9ad27.firebaseapp.com",
   projectId: "enerjix-9ad27",
   storageBucket: "enerjix-9ad27.appspot.com",
